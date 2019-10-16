@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="集合" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="og:title" content="JVM" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://example.org/docs/java/collection/" />
+<meta property="og:url" content="http://example.org/docs/java/jvm/" />
 
-<title>集合 | Java面试指南</title>
+<title>JVM | Java面试指南</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
@@ -17,7 +17,7 @@
 
 <script defer src="/search.min.852f0a9c566f22ebab9742ffe1aa15712d701ce762277738844a9e70172b0e26.js" integrity="sha256-hS8KnFZvIuurl0L/4aoVcS1wHOdiJ3c4hEqecBcrDiY="></script>
 
-<link rel="alternate" type="application/rss+xml" href="http://example.org/docs/java/collection/index.xml" title="Java面试指南" />
+<link rel="alternate" type="application/rss+xml" href="http://example.org/docs/java/jvm/index.xml" title="Java面试指南" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -122,7 +122,7 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/docs/java/jvm/" >
+  <a href="/docs/java/jvm/"  class="active">
       JVM
   </a>
 
@@ -218,7 +218,7 @@ https://github.com/alex-shpak/hugo-book
     
       
 
-  <a href="/docs/java/collection/"  class="active">
+  <a href="/docs/java/collection/" >
       集合
   </a>
 
@@ -290,23 +290,23 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>集合</strong>
+  <strong>JVM</strong>
 </header>
 
       
 <article class="markdown">
 
-<h2 id="常用集合类">常用集合类</h2>
+<h2 id="堆栈存放什么">堆栈存放什么</h2>
 
-<h2 id="常用集合类的内存结构">常用集合类的内存结构</h2>
+<h2 id="jvm内存模型jmm">JVM内存模型JMM</h2>
 
-<h2 id="集合类的继承关系">集合类的继承关系</h2>
+<h2 id="如何用命令查看堆栈信息">如何用命令查看堆栈信息</h2>
 
-<h2 id="线程安全的集合类-如何做到线程安全-内存结构是如何的">线程安全的集合类，如何做到线程安全（内存结构是如何的）</h2>
+<h2 id="oom后如何进行排查">OOM后如何进行排查</h2>
 
-<h2 id="集合类的常用遍历算法">集合类的常用遍历算法</h2>
+<h2 id="dump文件如何分析">Dump文件如何分析</h2>
 
-<h2 id="并发包中常用的集合类">并发包中常用的集合类</h2>
+<h2 id="如何进行jvm性能优化-衡量维度">如何进行JVM性能优化，衡量维度</h2>
 </article>
 
       
@@ -322,12 +322,12 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <ul>
-<li><a href="#常用集合类">常用集合类</a></li>
-<li><a href="#常用集合类的内存结构">常用集合类的内存结构</a></li>
-<li><a href="#集合类的继承关系">集合类的继承关系</a></li>
-<li><a href="#线程安全的集合类-如何做到线程安全-内存结构是如何的">线程安全的集合类，如何做到线程安全（内存结构是如何的）</a></li>
-<li><a href="#集合类的常用遍历算法">集合类的常用遍历算法</a></li>
-<li><a href="#并发包中常用的集合类">并发包中常用的集合类</a></li>
+<li><a href="#堆栈存放什么">堆栈存放什么</a></li>
+<li><a href="#jvm内存模型jmm">JVM内存模型JMM</a></li>
+<li><a href="#如何用命令查看堆栈信息">如何用命令查看堆栈信息</a></li>
+<li><a href="#oom后如何进行排查">OOM后如何进行排查</a></li>
+<li><a href="#dump文件如何分析">Dump文件如何分析</a></li>
+<li><a href="#如何进行jvm性能优化-衡量维度">如何进行JVM性能优化，衡量维度</a></li>
 </ul></li>
 </ul>
 </nav>

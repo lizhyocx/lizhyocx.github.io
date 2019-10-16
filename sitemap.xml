@@ -87,11 +87,23 @@
   </url>
   
   <url>
+    <loc>http://example.org/docs/java/gc/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/docs/java/</loc>
   </url>
   
   <url>
+    <loc>http://example.org/docs/java/jvm/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/docs/java/threadsafe/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/java/threadpool/</loc>
   </url>
   
   <url>
