@@ -91,6 +91,22 @@
   </url>
   
   <url>
+    <loc>http://example.org/docs/framework/guava/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/web/html/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/web/http/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/java/io/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/docs/java/</loc>
   </url>
   
@@ -99,11 +115,115 @@
   </url>
   
   <url>
+    <loc>http://example.org/docs/framework/mybatis/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/middleware/nosql/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/framework/spring/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/framework/springmvc/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/db/base/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/db/senior/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/web/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/security/web/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/middleware/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/distribute/distribute/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/web/front/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/basic/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/security/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/security/interface/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/middleware/search/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/db/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/basic/struct/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/middleware/service/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/framework/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/middleware/mq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/basic/system/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/docs/java/threadsafe/</loc>
   </url>
   
   <url>
     <loc>http://example.org/docs/java/threadpool/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/middleware/cache/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/basic/encode/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/distribute/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/distribute/network/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/docs/basic/design/</loc>
   </url>
   
   <url>
