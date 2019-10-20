@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/book.min.1b994bd28c6ce2255f069b6bf6837b4d396307637fc48d61dcb2a6caac26e031.css" integrity="sha256-G5lL0oxs4iVfBptr9oN7TTljB2N/xI1h3LKmyqwm4DE=">
 
 
-<script defer src="/search.min.098d861a6b1cb458f7577606a1cdd44a19664371d8c3f8dc4f4646356b38d9c8.js" integrity="sha256-CY2GGmsctFj3V3YGoc3UShlmQ3HYw/jcT0ZGNWs42cg="></script>
+<script defer src="/search.min.25ede5b15a7319e63b2155f457db798793c5c1243f82fb56c1ae703e0fd49096.js" integrity="sha256-Je3lsVpzGeY7IVX0V9t5h5PFwSQ/gvtWwa5wPg/UkJY="></script>
 
 <link rel="alternate" type="application/rss+xml" href="http://example.org/docs/java/collection/index.xml" title="Java面试指南" />
 <!--
@@ -1214,17 +1214,64 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h2 id="常用集合类">常用集合类</h2>
+<h3 id="常用集合类">常用集合类</h3>
 
-<h2 id="常用集合类的内存结构">常用集合类的内存结构</h2>
+<ul>
+<li>ArrayList、LinkedList、HashSet、HashMap、TreeMap</li>
+</ul>
 
-<h2 id="集合类的继承关系">集合类的继承关系</h2>
+<h3 id="常用集合类的内存结构">常用集合类的内存结构</h3>
 
-<h2 id="线程安全的集合类-如何做到线程安全-内存结构是如何的">线程安全的集合类，如何做到线程安全（内存结构是如何的）</h2>
+<ul>
+<li>ArrayList：基于数据实现，便于随机读取，可动态扩容（System.arraycopy）</li>
+<li>LinkedList：基于链表实现，便于增加、删除元素</li>
+<li>HashMap：基于数据+链表+红黑树实现，当链表元素大于8个时转换为红黑树</li>
 
-<h2 id="集合类的常用遍历算法">集合类的常用遍历算法</h2>
+<li><p>TreeMap：基于红黑树实现</p>
 
-<h2 id="并发包中常用的集合类">并发包中常用的集合类</h2>
+<p><strong>红黑树</strong></p>
+
+<p>1、红黑树是一种近似平衡的二叉查找树，满足以下条件:</p>
+
+<ul>
+<li>每个节点要么是黑色，要么是红色</li>
+<li>根节点必须是黑色</li>
+<li>红色节点不能连续（红色节点的父亲和孩子都不能是红色）</li>
+<li>对于每个节点，从根节点到null（树尾端）的任何路径，都包括相同个数的黑色节点</li>
+</ul></li>
+</ul>
+
+<h3 id="集合类的继承关系">集合类的继承关系</h3>
+
+<ul>
+<li>ArrayList、LinkedList实现Collection接口，继承AbstractList类，ArrayList实现RandomAccess接口</li>
+<li>HashMap实现Map接口，继承AbstractMap类</li>
+<li>HashTable继承Dictionary类，实现Map接口</li>
+</ul>
+
+<h3 id="线程安全的集合类-如何做到线程安全-内存结构是如何的">线程安全的集合类，如何做到线程安全（内存结构是如何的）</h3>
+
+<ul>
+<li>HashTable：get、put方法上添加synchronized关键字实现，不推荐使用</li>
+<li>Collections.synchronizeXXX，get、put方法都通过synchronized关键字共享变量mutex加锁，效率不高</li>
+<li>ConcurrentHashMap：JDK1.7采用分段锁，对Segment加锁，默认分16段，JDK1.8采用Node数组保存元素，默认Node数组大小16，对Node数组中的元素加锁，采用synchronized和CAS实现，put时，hash值相同，放到Node数组元素的next里，get方法不加锁</li>
+</ul>
+
+<h3 id="集合类的常用遍历算法">集合类的常用遍历算法</h3>
+
+<ul>
+<li>List：for-each、for循环、while循环</li>
+<li>Map：Map.EntrySet，用iterator遍历，推荐使用</li>
+</ul>
+
+<h3 id="并发包中常用的集合类">并发包中常用的集合类</h3>
+
+<ul>
+<li>ReenTrantLock：实现锁，使用时需要手动解锁</li>
+<li>CountDownLatch：实现计数器功能，子线程实行countdown后，可继续执行后续操作，父线程等待所有子线程处理完成后再执行</li>
+<li>CyclicBarrier：栅栏，子线程执行await后，需等待，等所有线程都执行await后，统一继续执行；可循环使用</li>
+<li>Semaphore：，控制每次访问次数，一个执行完，另一个即可补位</li>
+</ul>
 </article>
 
       
@@ -1240,12 +1287,15 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <ul>
+<li>
+<ul>
 <li><a href="#常用集合类">常用集合类</a></li>
 <li><a href="#常用集合类的内存结构">常用集合类的内存结构</a></li>
 <li><a href="#集合类的继承关系">集合类的继承关系</a></li>
 <li><a href="#线程安全的集合类-如何做到线程安全-内存结构是如何的">线程安全的集合类，如何做到线程安全（内存结构是如何的）</a></li>
 <li><a href="#集合类的常用遍历算法">集合类的常用遍历算法</a></li>
 <li><a href="#并发包中常用的集合类">并发包中常用的集合类</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
