@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/book.min.1b994bd28c6ce2255f069b6bf6837b4d396307637fc48d61dcb2a6caac26e031.css" integrity="sha256-G5lL0oxs4iVfBptr9oN7TTljB2N/xI1h3LKmyqwm4DE=">
 
 
-<script defer src="/search.min.25ede5b15a7319e63b2155f457db798793c5c1243f82fb56c1ae703e0fd49096.js" integrity="sha256-Je3lsVpzGeY7IVX0V9t5h5PFwSQ/gvtWwa5wPg/UkJY="></script>
+<script defer src="/search.min.d23d0b971cd7aaf7c3eb575032318ca96d76ca266cff830a1146164d87a30529.js" integrity="sha256-0j0LlxzXqvfD61dQMjGMqW12yiZs/4MKEUYWTYejBSk="></script>
 
 <link rel="alternate" type="application/rss+xml" href="http://example.org/docs/java/threadpool/index.xml" title="Java面试指南" />
 <!--
@@ -1214,11 +1214,61 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
 
-<h2 id="如何创建线程">如何创建线程</h2>
+<h3 id="如何创建线程">如何创建线程</h3>
 
-<h2 id="java常用线程池及适用场景">Java常用线程池及适用场景</h2>
+<ul>
+<li>继承Thread类</li>
+<li>实现Runnable接口</li>
+<li>实现Callable接口</li>
+<li>使用线程池</li>
+</ul>
 
-<p>##线程池的参数影响</p>
+<h3 id="java常用线程池及适用场景">Java常用线程池及适用场景</h3>
+
+<ul>
+<li>使用ThreadPoolExecutor类创建线程池，Executors提供的方法不建议使用，其实质也是实例化的ThreadPoolExecutor类，只是传递的参数不同</li>
+</ul>
+
+<h3 id="线程池的参数影响">线程池的参数影响</h3>
+
+<ul>
+<li>corePoolSize：核心线程数，初始化时为0，执行任务时，在corePoolSise大小的范围内，新建线程，执行任务</li>
+<li>maxPoolSize，最大线程数，配合队列参数使用，当超过核心线程数，且队列也满了，此时才会创建新的线程</li>
+<li>keepAliveTime，空闲时间，当线程大于核心线程数，且空闲达到空闲时间时，会销毁线程，如果小于核心线程数，不会销毁线程</li>
+
+<li><p>queue，阻塞队列，当线程大于等于核心线程数时，新增任务时，会将任务放到队列中等待执行。一般情况下，一定要给阻塞队列指定大小，否则任务堆积造成内存溢出。常用的阻塞队列有：</p>
+
+<ul>
+<li>ArrayBlockingQueue：有界队列</li>
+<li>LinkedBlockingQueue：无界队列</li>
+<li>SynchronousQueue：一般生产者消费者场景，队列只保存一个任务。是一个双栈双队列算法，无空间的队列或栈，任何一个对SynchronousQueue写需要等到一个对SynchronousQueue的读操作，反之亦然。一个读操作需要等待一个写操作，相当于是交换通道，提供者和消费者是需要组队完成工作，缺少一个将会阻塞线程，知道等到配对为止。</li>
+</ul></li>
+
+<li><p>rejectHandler，拒绝策略，当线程达到最大线程数，且队列也满了，此时还有新的任务提交，此时会触发拒绝策略。默认提供4种拒绝策略：</p>
+
+<ul>
+<li>AbortPolicy：终止当前提交的任务，并抛出异常</li>
+<li>DiscardOldestPolicy：丢弃最早提交的任务</li>
+<li>DiscardPolicy：丢弃当前提交的任务</li>
+<li>CallerRunsPolicy：由调用者线程进行执行（线程池的父线程）</li>
+</ul>
+
+<p><strong>阻塞队列</strong></p>
+
+<p>常用的方法：</p>
+
+<ul>
+<li>put：放元素，没有空间时，阻塞等待</li>
+
+<li><p>take：取元素，没有数据时，阻塞等待</p></li>
+
+<li><p>add：放元素，没有空间时，抛出异常</p></li>
+
+<li><p>offer：放元素，没有空间时，等待超时后返回false</p></li>
+
+<li><p>poll：取元素，没有数据时，等待超时后返回null</p></li>
+</ul></li>
+</ul>
 </article>
 
       
@@ -1234,8 +1284,12 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <ul>
+<li>
+<ul>
 <li><a href="#如何创建线程">如何创建线程</a></li>
 <li><a href="#java常用线程池及适用场景">Java常用线程池及适用场景</a></li>
+<li><a href="#线程池的参数影响">线程池的参数影响</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
