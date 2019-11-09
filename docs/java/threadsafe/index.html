@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/book.min.1b994bd28c6ce2255f069b6bf6837b4d396307637fc48d61dcb2a6caac26e031.css" integrity="sha256-G5lL0oxs4iVfBptr9oN7TTljB2N/xI1h3LKmyqwm4DE=">
 
 
-<script defer src="/search.min.e2ac51ab75ba0783ce3cad181aa0468bb5dff8dfa32eeb4617c4b3c3f49f24fe.js" integrity="sha256-4qxRq3W6B4POPK0YGqBGi7Xf&#43;N&#43;jLutGF8Szw/SfJP4="></script>
+<script defer src="/search.min.9d665d3439e5b9c8168e3c319761b230e5704050476d5fee8b3952e0921cae08.js" integrity="sha256-nWZdNDnlucgWjjwxl2GyMOVwQFBHbV/uizlS4JIcrgg="></script>
 
 <link rel="alternate" type="application/rss+xml" href="http://example.org/docs/java/threadsafe/index.xml" title="Java面试指南" />
 <!--
@@ -1247,7 +1247,12 @@ https://github.com/alex-shpak/hugo-book
 </ul></li>
 </ul>
 
-<h2 id="java中如何给对象加锁">Java中如何给对象加锁</h2>
+<h3 id="java中如何给对象加锁">Java中如何给对象加锁</h3>
+
+<ul>
+<li>通过synchronized关键字加锁，一般用在方法上或同步代码块，加在静态方法上时，锁定的时类对象，加载非静态方法上，锁定的是调用该方法的对象。不需要手动释放锁，由JVM控制。JVM对synchronized进行了优化，加锁效果提升很多。当没有其他线程抢占资源时，加的锁是偏向锁，同一个线程访问，不需要尝试获取锁，效率最高。一旦出现了其他线程尝试抢占资源，锁就会升级为轻量级锁。如果没有获取到锁，会进行一定次数的自旋，也许马上就能获取到锁，避免线程切换。但当自旋一定次数后，仍获取不到锁，就会升级为重量级锁。</li>
+<li>通过ReentrankLock加锁，需要手动加锁，手动释放，一般会把释放锁放到finally中，避免出现异常导致锁不会被释放</li>
+</ul>
 
 <h2 id="java加锁的原理">Java加锁的原理</h2>
 
@@ -1273,8 +1278,8 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="#线程安全的定义">线程安全的定义</a></li>
 <li><a href="#死锁-场景-如何解决">死锁，场景，如何解决</a></li>
-</ul></li>
 <li><a href="#java中如何给对象加锁">Java中如何给对象加锁</a></li>
+</ul></li>
 <li><a href="#java加锁的原理">Java加锁的原理</a></li>
 <li><a href="#自旋锁-阻塞锁-重入锁的基本原理">自旋锁、阻塞锁、重入锁的基本原理</a></li>
 <li><a href="#常用的原子类">常用的原子类</a></li>
